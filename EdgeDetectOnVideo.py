@@ -43,6 +43,7 @@ while(vid.isOpened()):
     roi_edges = region_of_interest(edges, np.array([roi_vertices], np.int32))
     #Determines what is a line segment
     #adjusted threshold, minlinelength, maxlinegap to video
+    
     lines = cv2.HoughLinesP(roi_edges, rho=1, theta=np.pi/180,threshold= 150, minLineLength=100, maxLineGap=10)
     #draws each line onto each frame
     for line in lines:
@@ -55,5 +56,6 @@ while(vid.isOpened()):
       break
 
 vid.release()
-cv2.destroyAllWindows()
+#DELETED A LINE
+#COMMIT #2
 
